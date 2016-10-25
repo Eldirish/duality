@@ -22,19 +22,19 @@ namespace Duality.Components
 		{
 			None		= 0x00,
 
-			Pos			= 0x01,
+			Pos		= 0x01,
 			Angle		= 0x04,
 			Scale		= 0x10,
 
-			All			= Pos | Angle | Scale
+			All		= Pos | Angle | Scale
 		}
 
-		private const float MinScale = 0.0000001f;
+		private const float MinScale 	= 0.0000001f;
 
-		private	Vector3	pos			= Vector3.Zero;
+		private	Vector3	pos		= Vector3.Zero;
 		private	float	angle		= 0.0f;
 		private	float	scale		= 1.0f;
-		private	bool	deriveAngle		= true;
+		private	bool	deriveAngle	= true;
 		private	bool	ignoreParent	= false;
 
 		// Cached values, recalc on change
@@ -43,7 +43,7 @@ namespace Duality.Components
 		private	float		angleAbs		= 0.0f;
 		private	float		scaleAbs		= 1.0f;
 		// Auto-calculated values
-		private	Vector3		vel				= Vector3.Zero;
+		private	Vector3		vel			= Vector3.Zero;
 		private	Vector3		velAbs			= Vector3.Zero;
 		private	float		angleVel		= 0.0f;
 		private	float		angleVelAbs		= 0.0f;
@@ -51,8 +51,8 @@ namespace Duality.Components
 		[DontSerialize] private	DirtyFlags	changes			= DirtyFlags.None;
 		[DontSerialize] private	Vector3		tempVel			= Vector3.Zero;
 		[DontSerialize] private	Vector3		tempVelAbs		= Vector3.Zero;
-		[DontSerialize] private	float		tempAngleVel	= 0.0f;
-		[DontSerialize] private	float		tempAngleVelAbs	= 0.0f;
+		[DontSerialize] private	float		tempAngleVel		= 0.0f;
+		[DontSerialize] private	float		tempAngleVelAbs		= 0.0f;
 
 		[DontSerialize] 
 		private EventHandler<TransformChangedEventArgs> eventTransformChanged = null;
@@ -78,7 +78,7 @@ namespace Duality.Components
 			}
 		}
 		/// <summary>
-		/// [GET / SET] The objects velocity relative to its parent object.
+		/// [GET] The objects velocity relative to its parent object.
 		/// </summary>
 		public Vector3 RelativeVel
 		{
@@ -99,7 +99,7 @@ namespace Duality.Components
 			}
 		}
 		/// <summary>
-		/// [GET / SET] The objects angle / rotation velocity relative to its parent object, in radians.
+		/// [GET] The objects angle / rotation velocity relative to its parent object, in radians.
 		/// </summary>
 		public float RelativeAngleVel
 		{
@@ -907,7 +907,7 @@ namespace Duality.Components
 			target.deriveAngle		= this.deriveAngle;
 			target.ignoreParent		= this.ignoreParent;
 
-			target.pos				= this.pos;
+			target.pos			= this.pos;
 			target.angle			= this.angle;
 			target.scale			= this.scale;
 
@@ -918,10 +918,10 @@ namespace Duality.Components
 			target.tempVel			= this.tempVel;
 			target.tempVelAbs		= this.tempVelAbs;
 			target.tempAngleVel		= this.tempAngleVel;
-			target.tempAngleVelAbs	= this.tempAngleVelAbs;
+			target.tempAngleVelAbs		= this.tempAngleVelAbs;
 
 			target.velAbs			= this.velAbs;
-			target.vel				= this.vel;
+			target.vel			= this.vel;
 			target.angleVel			= this.angleVel;
 			target.angleVelAbs		= this.angleVelAbs;
 
